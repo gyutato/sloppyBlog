@@ -1,0 +1,45 @@
+/* 진입 페이지라고 생각해도 되지만 메뉴 페이지 위에 뜨는 컴포넌트라고 생각할 수도 있음 */
+
+.dimmed-layer {
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background-color: rgba(#000, 0.8);
+    z-index: 9999; // 무조건 상위에 출력되도록
+}
+
+.order-type-popup {
+    position: fixed;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    padding: 32px 0 40px;
+    background-color: #fff;
+    /* 상위 요소 (div) 에서 여백 등 구성, 
+    내부 요소(p 등)은 딱 요소 관련 스타일링만 하길 권장 */
+    text-align: center;
+    z-index: 10000;
+
+    .title { 
+        /*sass의 장점! 네스팅 가능:
+        order-type-popup이라는 흰색 요소 안의 제목 요소에 대한 스타일링이라는 것이 잘 드러남 */
+        font-size: 20px;
+        font-weight: 700;
+        color: $booking-color-text1;
+    }
+
+    .type-list {
+        display: flex; // 두 요소를 나란히 정렬
+        margin-top: 32px;
+    }
+
+    .type-item {
+        flex: 1; // 요소 크기를 제외한 빈 공간을 1:1로 분할(차지)
+        & + .type-item { // 인접 선택자. 앞의 요소 바로 뒤에 있는 요소만 선택
+            border-left: 1px solid $booking-color-border103;
+        }
+    }
+} 
+
