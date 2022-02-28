@@ -20,6 +20,7 @@
     /* 상위 요소 (div) 에서 여백 등 구성, 
     내부 요소(p 등)은 딱 요소 관련 스타일링만 하길 권장 */
     text-align: center;
+    border-radius: 16px 16px 0 0;
     z-index: 10000;
 
     .title { 
@@ -40,6 +41,31 @@
         & + .type-item { // 인접 선택자. 앞의 요소 바로 뒤에 있는 요소만 선택
             border-left: 1px solid $booking-color-border103;
         }
+    }
+
+    .icon {
+        width: 100px;
+        height: auto;
+        color: $booking-color-bg118
+    }
+
+    .desc {
+        margin-top: 8px;
+        font-size: 15px;
+        line-height: 1.5;
+        font-weight: 600;
+        color: $booking-color-text1;
+    }
+
+    .btn-selection {
+        display: inline-block;
+        margin-top: 10px;
+        padding: 6px 18px;
+        font-size: 16px;
+        font-weight: 700;
+        background-color: $booking-color-bg189;
+        color: #fff;
+        border-radius: 28px;
     }
 } 
 
